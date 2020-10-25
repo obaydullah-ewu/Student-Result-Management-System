@@ -1,0 +1,68 @@
+<div class="container">
+
+  <h1>Grade for student {{ user.username}}</h1>
+
+  <hr>
+        {% for grade in grades %}
+        <div class="container">
+
+         
+              
+          {% if user.username ==  grade.studentName %}
+              <h4>
+                <!-- {{ grade.teacher }} <br>
+                {{ grade.student }} <br> -->
+                <!-- Course: {{ grade.course }} <br>
+                Mid1: {{ grade.mid1 }} <br>
+                Mid2: {{ grade.mid2 }} <br>
+                Lab: {{ grade.lab }} <br>
+                Quiz: {{ grade.quiz }} <br>
+                Final: {{ grade.final }} <br>
+                Total: {{ grade.total }} <br>
+
+                Grade Obtained: {{ grade.studentGrade }} -->
+
+                <table class=table border="3">
+                  <thead>
+                    <tr>
+                      <th scope="col">Course</th>
+                      <th scope="col">Mid1</th>
+                      <th scope="col">Mid2</th>
+                      <th scope="col">Lab</th>
+                      <th scope="col">Quiz</th>
+                      <th scope="col">Final</th>
+                      <th scope="col">Total</th>
+                      <th scope="col">Grade Obtained</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ grade.course }} </td>
+                      <td>{{ grade.mid1 }} </td>
+                      <td>{{ grade.mid2 }} </td>
+                      <td>{{ grade.lab }} </td>
+                      <td>{{ grade.quiz }} </td>
+                      <td>{{ grade.final }} </td>
+                      <td>{{ grade.total }} </td>
+                      <td>{{ grade.studentGrade }} </td>
+                
+                    </tr>
+                  </tbody>
+                </table>
+                
+              </h4>
+          {% endif %}
+        </div>
+      {% endfor %}
+</div>
+
+<!-- 
+teacher = models.ForeignKey(Teacher, on_delete=models.DO_NOTHING)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.DO_NOTHING)
+
+    mid1 = models.FloatField(null=True)
+    mid2 = models.FloatField(null=True)
+    lab = models.FloatField(null=True)
+    quiz = models.FloatField(null=True)
+    final = models.FloatField(null=True) -->

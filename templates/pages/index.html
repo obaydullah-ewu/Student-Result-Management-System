@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% block content %}
+<center> <h2><u>Important Notices</u> </h2></center>
+{% for notice in notices %}
+
+<h4>Teacher: {{ notice.teacher }}</h4>
+
+<h4>Title: {{ notice.title }}</h4>
+
+<h4>Description: </h4> <td>{{ notice.description }}</td>
+
+<h4>Posted Date & Time: {{ notice.hire_date }}</h4>
+
+
+
+<br><br><br><hr>
+<!-- User: {{ user.username }} -->
+
+{% endfor %}
+
+{% endblock %} 
+
+
+<!-- 
+teacher = models.ForeignKey(Teacher, on_delete=models.DO_NOTHING)
+    title = models.CharField(max_length = 200)
+    description = models.TextField(blank=True, null=True)
+    hire_date  -->
